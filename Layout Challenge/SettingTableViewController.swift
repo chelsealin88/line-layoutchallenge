@@ -10,57 +10,70 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     
-    var datas: [SettingData] = []
+    
+    let firstArray = [Info(image: "profile", title: "Profile"),
+                        Info(image: "account", title: "Account"),]
+    
+    let secondArray = [Info(image: "sticker", title: "Sticker"),
+                        Info(image: "themes", title: "Theme")]
 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        datas = createArray()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return datas.count
+        if section == 1 {
+            return secondArray.count
+        }
+        return firstArray.count
     }
     
-    func createArray() -> [SettingData] {
-        
-        var tempoData: [SettingData] = []
-        
-        let profile = SettingData(image: #imageLiteral(resourceName: "profile"), title: "Profile")
-        let account = SettingData(image: #imageLiteral(resourceName: "account"), title: "Account")
-        let privacy = SettingData(image: #imageLiteral(resourceName: "privacy"), title: "Privacy")
-        let accountTransfer = SettingData(image: #imageLiteral(resourceName: "account transfer"), title: "Account Transfer")
-        let keep = SettingData(image: #imageLiteral(resourceName: "keep"), title: "Keep")
-        
-        tempoData.append(profile)
-        tempoData.append(account)
-        tempoData.append(privacy)
-        tempoData.append(accountTransfer)
-        tempoData.append(keep)
-        
-        return tempoData
-        
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
-
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return " Test 1 "
+        }
+        return " Test 2 "
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SettingTableViewCell
         
-        let data = datas[indexPath.row]
+        cell.iconimage.image = UIImage(named: firstArray[indexPath.row].image)
+        cell.titleLabel.text = firstArray[indexPath.row].title
         
-        cell.setDetail(settingData: data)
+        if indexPath.section == 1 {
+            cell.iconimage.image = UIImage(named: secondArray[indexPath.row].image)
+            cell.textLabel?.text = secondArray[indexPath.row].title
+        }
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+            
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    
     
 
     /*
@@ -79,7 +92,7 @@ class SettingTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -107,5 +120,9 @@ class SettingTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    
+    
+
 
 }

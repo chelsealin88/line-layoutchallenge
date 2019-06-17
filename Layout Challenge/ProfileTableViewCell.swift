@@ -1,5 +1,5 @@
 //
-//  SettingTableViewCell.swift
+//  ProfileTableViewCell.swift
 //  Layout Challenge
 //
 //  Created by Chelsea Lin on 2019/6/17.
@@ -8,11 +8,8 @@
 
 import UIKit
 
-class SettingTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var iconimage: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    
+class ProfileTableViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,7 +20,5 @@ class SettingTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
 
 }

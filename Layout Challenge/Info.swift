@@ -9,13 +9,8 @@
 import Foundation
 import UIKit
 
-class SettingData {
+struct Info {
     
-    var image: UIImage
+    var image: String
     var title: String
-    
-    init(image: UIImage, title: String) {
-        self.image = image
-        self.title = title
-    }
 }
