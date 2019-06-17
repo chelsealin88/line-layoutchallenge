@@ -35,7 +35,7 @@ class SettingTableViewController: UITableViewController {
         
         navigationBar?.tintColor = .white
         navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationBar?.barTintColor = UIColor(red: 39/255, green: 48/255, blue: 104/255, alpha: 41/255)
+        navigationBar?.barTintColor = UIColor(red: 24/255, green: 37/255, blue: 125/255, alpha: 49/255)
     }
 
     // MARK: - Table view data source

@@ -18,11 +18,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         Profile(title: "Phone number", contain: "+886")
     ]
     
+    let arrayData1 = [Profile(title: "", contain: "Share Profile media updates")]
     
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "My profile"
         tableview.delegate = self
         tableview.dataSource = self
@@ -31,19 +33,55 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         profiles[0].contain = User.getUsername()
         tableview.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profiles.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch (section) {
+        case 0: return profiles.count
+        case 1: return arrayData1.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch (section){
+        case 1: return " "
+        case 2: return "Share Profile media updates on Timeline"
+        default:
+            return nil
+        }
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProfileTableViewCell
-        let profile = profiles[indexPath.row]
-        cell.updateProfile(profile)
+        
+        if indexPath.section == 0 {
+            let profile = profiles[indexPath.row]
+            cell.updateProfile(profile)
+        } else if indexPath.section == 1 {
+            let section1 = arrayData1[indexPath.row]
+            cell.updateProfile(section1)
+            let switchObj = UISwitch(frame: CGRect(x: 1, y: 1, width: 20, height: 20))
+            switchObj.isOn = false
+            cell.accessoryView = switchObj
+            
+        }
+        
+        
         return cell
     }
     
@@ -54,10 +92,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        
         if indexPath == [0,0] {
             let vc = storyboard?.instantiateViewController(withIdentifier: "DisplayViewController") as! DisplayViewController
-//             vc.textField.text = User.getUsername() 
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
