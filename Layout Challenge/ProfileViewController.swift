@@ -11,7 +11,6 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var displayname = String()
     // todo: 計算屬性
     var profiles = [
         Profile(title: "Display name", contain: User.getUsername()),
@@ -32,7 +31,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         profiles[0].contain = User.getUsername()
+        tableview.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,8 +53,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        
         if indexPath == [0,0] {
-            let vc = storyboard?.instantiateInitialViewController()
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DisplayViewController") as! DisplayViewController
+//             vc.textField.text = User.getUsername() 
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

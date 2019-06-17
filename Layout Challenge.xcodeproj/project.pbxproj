@@ -79,7 +79,6 @@
 				5E58266D22B77A8500D3D53D /* Assets.xcassets */,
 				5E58265522B7429500D3D53D /* Info.plist */,
 				5E58264D22B7429100D3D53D /* Layout_Challenge.xcdatamodeld */,
-				5E58267122B78E4500D3D53D /* User.swift */,
 			);
 			path = "Layout Challenge";
 			sourceTree = "<group>";
@@ -99,6 +98,7 @@
 			children = (
 				5E58266522B74B4D00D3D53D /* Info.swift */,
 				5E58266F22B77FAA00D3D53D /* Profile.swift */,
+				5E58267122B78E4500D3D53D /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

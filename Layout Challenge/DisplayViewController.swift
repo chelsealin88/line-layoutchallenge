@@ -14,20 +14,24 @@ class DisplayViewController: UIViewController{
     
     @IBOutlet weak var textField: UITextField!
     
-    let userDefaults = UserDefaults.standard
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textField.text = User.getUsername()
 
+        title = "Display Name"
         // Do any additional setup after loading the view.
     }
     
     
     @IBAction func saveButton(_ sender: Any) {
         
-//        userDefaults.set(textField.text, forKey: "userID")
-//        textField.text = ""
         User.saveUsername(textField.text!)
+        
+        self.navigationController?.popViewController(animated: true)
+        
+        //back to profile when press save
         
     }
     
