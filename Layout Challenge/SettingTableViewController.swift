@@ -11,10 +11,10 @@ import UIKit
 class SettingTableViewController: UITableViewController {
     
     
-    let firstArray = [Info(image: "profile", title: "Profile"),
+    let arrayData1 = [Info(image: "profile", title: "Profile"),
                         Info(image: "account", title: "Account"),]
     
-    let secondArray = [Info(image: "sticker", title: "Sticker"),
+    let arrayData2 = [Info(image: "sticker", title: "Sticker"),
                         Info(image: "themes", title: "Theme")]
 
     
@@ -34,9 +34,9 @@ class SettingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 1 {
-            return secondArray.count
+            return arrayData2.count
         }
-        return firstArray.count
+        return arrayData1.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,22 +52,20 @@ class SettingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SettingTableViewCell
-        
-        cell.iconimage.image = UIImage(named: firstArray[indexPath.row].image)
-        cell.titleLabel.text = firstArray[indexPath.row].title
-        
-        if indexPath.section == 1 {
-            cell.iconimage.image = UIImage(named: secondArray[indexPath.row].image)
-            cell.textLabel?.text = secondArray[indexPath.row].title
+
+        if indexPath.section == 0 {
+            cell.iconimage.image = UIImage(named: arrayData1[indexPath.row].image)
+            cell.titleLabel.text = arrayData1[indexPath.row].title
+        } else if indexPath.section == 1 {
+            cell.iconimage.image = UIImage(named: arrayData2[indexPath.row].image)
+            cell.titleLabel.text = arrayData2[indexPath.row].title
         }
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if indexPath.row == 0 {
-            
+        if indexPath == [0,0] {
             let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
