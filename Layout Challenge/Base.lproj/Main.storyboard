@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting-->
+        <!--Settings-->
         <scene sceneID="qmG-yP-yJb">
             <objects>
                 <tableViewController id="gZK-1x-ja3" customClass="SettingTableViewController" customModule="Layout_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="gZK-1x-ja3" id="DZh-MX-vxa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="bgG-IB-TQP"/>
+                    <navigationItem key="navigationItem" title="Settings" id="bgG-IB-TQP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rd-zM-uKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

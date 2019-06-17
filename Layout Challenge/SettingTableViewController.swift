@@ -12,31 +12,48 @@ class SettingTableViewController: UITableViewController {
     
     
     let arrayData1 = [Info(image: "profile", title: "Profile"),
-                        Info(image: "account", title: "Account"),]
+                      Info(image: "account", title: "Account"),
+                      Info(image: "privacy", title: "Privacy"),
+                      Info(image: "account transfer", title: "Account Transfer"),
+                      Info(image: "keep", title: "Keep")]
     
-    let arrayData2 = [Info(image: "sticker", title: "Sticker"),
-                        Info(image: "themes", title: "Theme")]
+    
+    let arrayData2 = [Info(image: "smile", title: "Sticker"),
+                      Info(image: "themes", title: "Theme"),
+                      Info(image: "coin", title: "Coins")]
+    
+    let arrayData3 = [Info(image: "notification", title: "Notifications"),
+                      Info(image: "chat", title: "Chat")]
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let navigationBar = navigationController?.navigationBar
+
+        
+        navigationBar?.tintColor = .white
+        navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationBar?.barTintColor = UIColor(red: 39/255, green: 48/255, blue: 104/255, alpha: 41/255)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if section == 1 {
-            return arrayData2.count
+        
+        switch (section) {
+        case 0: return arrayData1.count
+        case 1: return arrayData2.count
+        case 2: return arrayData3.count
+        default:
+            return 0
         }
-        return arrayData1.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,10 +61,17 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return " Test 1 "
+        
+        switch (section) {
+        case 0: return " "
+        case 1: return " "
+        case 2: return " "
+        default: return nil
         }
-        return " Test 2 "
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,6 +83,9 @@ class SettingTableViewController: UITableViewController {
         } else if indexPath.section == 1 {
             cell.iconimage.image = UIImage(named: arrayData2[indexPath.row].image)
             cell.titleLabel.text = arrayData2[indexPath.row].title
+        } else if indexPath.section == 2 {
+            cell.iconimage.image = UIImage(named: arrayData3[indexPath.row].image)
+            cell.titleLabel.text = arrayData3[indexPath.row].title
         }
 
         return cell
@@ -119,8 +146,7 @@ class SettingTableViewController: UITableViewController {
     }
     */
 
-    
-    
-
-
 }
+
+
+
