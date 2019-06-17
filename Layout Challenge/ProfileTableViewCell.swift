@@ -24,5 +24,9 @@ class ProfileTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-
+    func updateProfile(_ profile: Profile) {
+        titleLabel.text = profile.title
+        containLabel.text = profile.contain
+    }
+    
 }

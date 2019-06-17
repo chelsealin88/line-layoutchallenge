@@ -19,6 +19,7 @@
 		5E58266C22B778A200D3D53D /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58266B22B778A200D3D53D /* DisplayViewController.swift */; };
 		5E58266E22B77A8500D3D53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E58266D22B77A8500D3D53D /* Assets.xcassets */; };
 		5E58267022B77FAA00D3D53D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58266F22B77FAA00D3D53D /* Profile.swift */; };
+		5E58267222B78E4500D3D53D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58267122B78E4500D3D53D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5E58266B22B778A200D3D53D /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		5E58266D22B77A8500D3D53D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E58266F22B77FAA00D3D53D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		5E58267122B78E4500D3D53D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				5E58266D22B77A8500D3D53D /* Assets.xcassets */,
 				5E58265522B7429500D3D53D /* Info.plist */,
 				5E58264D22B7429100D3D53D /* Layout_Challenge.xcdatamodeld */,
+				5E58267122B78E4500D3D53D /* User.swift */,
 			);
 			path = "Layout Challenge";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				5E58264722B7429100D3D53D /* AppDelegate.swift in Sources */,
 				5E58266222B7488300D3D53D /* SettingTableViewCell.swift in Sources */,
 				5E58267022B77FAA00D3D53D /* Profile.swift in Sources */,
+				5E58267222B78E4500D3D53D /* User.swift in Sources */,
 				5E58264F22B7429100D3D53D /* Layout_Challenge.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,5 +12,5 @@ import Foundation
 struct Profile {
     
     let title: String
-    let contain: String
+    var contain: String
 }

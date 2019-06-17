@@ -9,19 +9,28 @@
 
 import UIKit
 
+
 class DisplayViewController: UIViewController{
-   
     
+    @IBOutlet weak var textField: UITextField!
+    
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func saveButton(_ sender: Any) {
+        
+//        userDefaults.set(textField.text, forKey: "userID")
+//        textField.text = ""
+        User.saveUsername(textField.text!)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
