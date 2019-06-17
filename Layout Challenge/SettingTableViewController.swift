@@ -10,39 +10,58 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     
+    var datas: [SettingData] = []
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        datas = createArray()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return datas.count
+    }
+    
+    func createArray() -> [SettingData] {
+        
+        var tempoData: [SettingData] = []
+        
+        let profile = SettingData(image: #imageLiteral(resourceName: "profile"), title: "Profile")
+        let account = SettingData(image: #imageLiteral(resourceName: "account"), title: "Account")
+        let privacy = SettingData(image: #imageLiteral(resourceName: "privacy"), title: "Privacy")
+        let accountTransfer = SettingData(image: #imageLiteral(resourceName: "account transfer"), title: "Account Transfer")
+        let keep = SettingData(image: #imageLiteral(resourceName: "keep"), title: "Keep")
+        
+        tempoData.append(profile)
+        tempoData.append(account)
+        tempoData.append(privacy)
+        tempoData.append(accountTransfer)
+        tempoData.append(keep)
+        
+        return tempoData
+        
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SettingTableViewCell
+        
+        let data = datas[indexPath.row]
+        
+        cell.setDetail(settingData: data)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

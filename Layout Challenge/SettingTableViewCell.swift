@@ -11,7 +11,7 @@ import UIKit
 class SettingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconimage: UIImageView!
-    @IBOutlet weak var settingLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +22,13 @@ class SettingTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setDetail(settingData: SettingData) {
+        
+        iconimage.image = settingData.image
+        titleLabel.text = settingData.title
+        
     }
 
 }
