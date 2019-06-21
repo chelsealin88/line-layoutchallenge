@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="72" id="Fup-Ct-ZvL" customClass="SettingTableViewCell" customModule="Layout_Challenge" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="72" id="Fup-Ct-ZvL" customClass="SettingTableViewCell" customModule="Layout_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fup-Ct-ZvL" id="fRZ-Vk-JeP">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xw0-m6-yiA">
@@ -39,19 +39,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left-512" translatesAutoresizingMaskIntoConstraints="NO" id="F9J-xN-BcE">
-                                            <rect key="frame" x="374" y="26" width="20" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="LRe-Y1-Bw9"/>
-                                                <constraint firstAttribute="width" constant="20" id="Noa-r8-Z8j"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="eia-0n-hre" firstAttribute="leading" secondItem="xw0-m6-yiA" secondAttribute="trailing" constant="20" id="0MG-eT-qzG"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="F9J-xN-BcE" secondAttribute="trailing" id="OoE-Am-iJx"/>
                                         <constraint firstItem="eia-0n-hre" firstAttribute="centerY" secondItem="fRZ-Vk-JeP" secondAttribute="centerY" id="SJt-QV-eab"/>
-                                        <constraint firstItem="F9J-xN-BcE" firstAttribute="centerY" secondItem="fRZ-Vk-JeP" secondAttribute="centerY" id="cfJ-9P-jT9"/>
                                         <constraint firstItem="xw0-m6-yiA" firstAttribute="centerY" secondItem="fRZ-Vk-JeP" secondAttribute="centerY" id="kEG-iU-hBe"/>
                                         <constraint firstItem="xw0-m6-yiA" firstAttribute="leading" secondItem="fRZ-Vk-JeP" secondAttribute="leadingMargin" constant="20" id="oc7-ie-kNC"/>
                                     </constraints>
@@ -96,11 +87,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="88" id="jIN-rm-vQ3" customClass="ProfileTableViewCell" customModule="Layout_Challenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="88" id="jIN-rm-vQ3" customClass="ProfileTableViewCell" customModule="Layout_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jIN-rm-vQ3" id="MpZ-gT-YJu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-pa-Dfe">
@@ -120,19 +111,10 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left-512" translatesAutoresizingMaskIntoConstraints="NO" id="cYu-74-XyY">
-                                                    <rect key="frame" x="374" y="34" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="KzC-7y-rNM"/>
-                                                        <constraint firstAttribute="width" constant="20" id="OpU-9g-Una"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fsr-pa-Dfe" firstAttribute="centerY" secondItem="MpZ-gT-YJu" secondAttribute="centerY" id="MRW-mP-JOt"/>
                                                 <constraint firstItem="fsr-pa-Dfe" firstAttribute="leading" secondItem="MpZ-gT-YJu" secondAttribute="leadingMargin" constant="20" id="fIM-ii-hUc"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cYu-74-XyY" secondAttribute="trailing" id="iD9-dr-N09"/>
-                                                <constraint firstItem="cYu-74-XyY" firstAttribute="centerY" secondItem="MpZ-gT-YJu" secondAttribute="centerY" id="zFh-Z6-g0Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -221,6 +203,5 @@
     </scenes>
     <resources>
         <image name="banner" width="1240" height="476"/>
-        <image name="left-512" width="512" height="512"/>
     </resources>
 </document>

@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import UIKit
 
 struct Info {
     
-    var image: String
+    var imagename: String
     var title: String
 }

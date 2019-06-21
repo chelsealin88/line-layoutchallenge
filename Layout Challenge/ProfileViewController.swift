@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     ]
     
     let arrayData1 = [Profile(title: "", contain: "Share Profile media updates")]
+    let arrayDara2 = [Profile(title: "", contain: "LINE ID")
+                        ]
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -66,6 +68,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProfileTableViewCell
         
@@ -75,6 +78,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         } else if indexPath.section == 1 {
             let section1 = arrayData1[indexPath.row]
             cell.updateProfile(section1)
+            // accessory View
             let switchObj = UISwitch(frame: CGRect(x: 1, y: 1, width: 20, height: 20))
             switchObj.isOn = false
             cell.accessoryView = switchObj
@@ -88,6 +92,21 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    // header 
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        headerView.backgroundColor = UIColor.lightGray
+//        let headerLabel = UILabel(frame: CGRect(x: 30, y: 0, width:
+//            tableView.bounds.size.width, height: tableView.bounds.size.height))
+//        headerLabel.font = UIFont(name: "Verdana", size: 20)
+//        headerLabel.textColor = UIColor.white
+//        headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
+//        headerLabel.sizeToFit()
+//        headerView.addSubview(headerLabel)
+//
+//        return headerView
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -110,3 +129,4 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
      */
     
 }
+

@@ -24,5 +24,17 @@ class SettingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func updateCell(_ info: Info) {
+        
+        titleLabel.text = info.title
+        iconimage.image = UIImage(named: info.imagename)
+        
+    }
+    
+//    func updateCell(with model:Any) {
+//        if let modelInfo = model as? Info {
+//
+//        }
+//    }
 
 }
